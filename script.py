@@ -35,3 +35,17 @@ thread = threading.Thread(target=squares, args=(numbers,))
 thread.start()
 thread.join()
 
+#Passing Multiple Arguments:
+def repeat_string(s, times):
+    print(s * times)
+
+thread = threading.Thread(target=repeat_string, args=("Hello! ", 3))
+
+#Callable Objects with Arguments:
+class Worker:
+    def __call__(self, number):
+        print(f"Number squared: {number * number}")
+
+worker = Worker()
+thread = threading.Thread(target=worker, args=(4,))
+
